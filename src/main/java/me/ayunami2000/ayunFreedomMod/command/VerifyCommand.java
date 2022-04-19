@@ -31,6 +31,7 @@ public class VerifyCommand implements CommandExecutor {
                     }else{
                         String code = RandomStringUtils.randomAlphanumeric(10);
                         Admin.verifyCodes.put(admin, code);
+                        sender.sendMessage("A message has been sent to your discord with the verify command to proceed.");
                         admin.discordUser.sendMessage("Please run `/verify " + code + "` in-game to verify!");
                     }
                 }
@@ -38,6 +39,7 @@ public class VerifyCommand implements CommandExecutor {
                 if (Admin.verifyCodes.containsKey(admin)){
                     if (Admin.verifyCodes.get(admin).equals(args[0])){
                         admin.verifyAdmin();
+                        sender.sendMessage("You are now verified!");
                     }else{
                         Admin.verifyCodes.remove(admin);
                         player.kickPlayer("Verification failed!");

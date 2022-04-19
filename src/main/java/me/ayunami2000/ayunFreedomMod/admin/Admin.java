@@ -32,5 +32,6 @@ public class Admin {
         this.verified = true;
         verifyCodes.remove(this);
         Bukkit.broadcastMessage(this.username + " has verified!");
+        if (Main.chatChannel != null) Main.chatChannel.sendMessage("**" + this.username + " has verified!**");
     }
 }

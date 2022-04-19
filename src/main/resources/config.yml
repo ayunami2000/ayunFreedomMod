@@ -1,11 +1,52 @@
 # "username:discordid"
+# if not using discord, discordid can be anything, even nothing, as long as : exists at the end
 admins:
   - "ayunami2000:214118574485143553"
 
 # "matchOrRegex:canAdminUse:commandToBlockWithoutSlash"
 # "match:no:mail sendall"
 # "regex:yes:^tell \*+"
-blockedCommands: []
+blockedCommands:
+  - "m:n:ban"
+  - "m:n:ban-ip"
+  - "r:y:^clear "
+  - "m:n:defaultgamemode"
+  - "m:y:deop"
+  - "m:y:difficulty"
+  - "m:y:effect"
+  - "m:y:enchant"
+  - "r:y:^gamemode [^ ]+ "
+  - "m:y:gamerule"
+  - "m:y:give"
+  - "m:y:kick"
+  - "r:y:^kill "
+  - "m:y:op"
+  - "m:n:pardon"
+  - "m:n:pardon-ip"
+  - "m:n:reload"
+  - "m:y:save-all"
+  - "m:n:save-off"
+  - "m:n:save-on"
+  - "m:y:say"
+  - "m:n:scoreboard"
+  - "r:y:^spawnpoint "
+  - "m:n:stop"
+  - "m:n:testfor"
+  - "m:y:time"
+  - "m:n:timings"
+  - "m:y:toggledownfall"
+  - "r:y:^tp [^ ]+ "
+  - "m:y:weather"
+  - "m:n:whitelist"
+  - "r:y:xp [^ ]+ "
 
-# discord token
-discordToken: ""
+# discord
+discord:
+  # enabled (discord-based verification, discord-based console, and server chat mirroring)
+  enabled: false
+  # token
+  token: ""
+  # server chat channel id
+  chatChannel: ""
+  # console channel id
+  consoleChannel: ""

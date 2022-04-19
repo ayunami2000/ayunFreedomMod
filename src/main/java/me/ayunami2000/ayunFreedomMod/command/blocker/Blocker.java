@@ -40,7 +40,7 @@ public class Blocker {
                 continue;
             }
             if (isRegex){
-                blockedCommands.add(new RegexCommand(Pattern.compile(pieces[2]), canAdminUse));
+                blockedCommands.add(new RegexCommand(Pattern.compile(pieces[2], Pattern.CASE_INSENSITIVE), canAdminUse));
             }else{
                 if (commandMap == null){
                     blockedCommands.add(new MatchCommand(pieces[2], canAdminUse));

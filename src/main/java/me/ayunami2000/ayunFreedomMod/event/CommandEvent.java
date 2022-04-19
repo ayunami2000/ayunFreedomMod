@@ -14,11 +14,11 @@ public class CommandEvent implements Listener {
             return;
         }
         Admin admin = Admin.getAdmin(event.getPlayer().getName());
-        if (admin != null && !admin.verified && event.getMessage().equalsIgnoreCase("/verify")) {
+        if (admin != null && !admin.verified && event.getMessage().startsWith("/verify")) {
             event.setCancelled(true);
             return;
         }
-        if (Main.commandBlocker.isBlocked(event.getMessage().trim().replaceAll(" {2,}", " "), admin != null)){
+        if (Main.commandBlocker.isBlocked(event.getMessage().substring(1).trim().replaceAll(" {2,}", " "), admin != null)){
             event.setCancelled(true);
         }
     }

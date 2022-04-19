@@ -1,0 +1,11 @@
+# "username:discordid"
+admins:
+  - "ayunami2000:214118574485143553"
+
+# "matchOrRegex:canAdminUse:commandToBlockWithoutSlash"
+# "match:no:mail sendall"
+# "regex:yes:^tell \*+"
+blockedCommands: []
+
+# discord token
+discordToken: ""

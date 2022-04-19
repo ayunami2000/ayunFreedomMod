@@ -4,6 +4,7 @@ target/classes/
 target/generated-sources/
 target/maven-archiver/
 target/maven-status/
-target/original-*
+target/original-*.jar
+target/*-shaded.jar
 ayunFreedomMod.iml
 dependency-reduced-pom.xml

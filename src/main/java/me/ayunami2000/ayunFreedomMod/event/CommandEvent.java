@@ -13,7 +13,12 @@ public class CommandEvent implements Listener {
             event.setCancelled(true);
             return;
         }
-        if (Main.commandBlocker.isBlocked(event.getMessage().trim().replaceAll(" {2,}", " "), Admin.isAdmin(event.getPlayer().getName()))){
+        Admin admin = Admin.getAdmin(event.getPlayer().getName());
+        if (admin != null && !admin.verified && event.getMessage().equalsIgnoreCase("/verify")) {
+            event.setCancelled(true);
+            return;
+        }
+        if (Main.commandBlocker.isBlocked(event.getMessage().trim().replaceAll(" {2,}", " "), admin != null)){
             event.setCancelled(true);
         }
     }

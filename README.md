@@ -6,8 +6,6 @@ a new free op experience, for 1.5.2!
 
 ## todo:
 - worldedit limiter
-- admin verifier
-- discord hook
-- for now, only admins can verify with discord
+- discord chat mirror
 - add/remove admins with a command
-- freezing players if admin but not verified
+- add verify timeout

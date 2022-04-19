@@ -9,12 +9,9 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 public class CommandEvent implements Listener {
     @EventHandler
     public void onCommand(PlayerCommandPreprocessEvent event){
-        if (!event.getPlayer().isOp() && !event.getMessage().equalsIgnoreCase("/opme")) { // opme does not exist yet lol, for now op players on FIRST join and admins can deop for bad behavior
-            event.setCancelled(true);
-            return;
-        }
         Admin admin = Admin.getAdmin(event.getPlayer().getName());
-        if (admin != null && !admin.verified && event.getMessage().startsWith("/verify")) {
+        if (admin != null && !admin.verified && !event.getMessage().startsWith("/verify")) {
+            event.getPlayer().sendMessage("You must verify before using commands!");
             event.setCancelled(true);
             return;
         }

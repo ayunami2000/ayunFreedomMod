@@ -1,6 +1,7 @@
 package me.ayunami2000.ayunFreedomMod;
 
 import me.ayunami2000.ayunFreedomMod.admin.Admin;
+import me.ayunami2000.ayunFreedomMod.command.VerifyCommand;
 import me.ayunami2000.ayunFreedomMod.command.blocker.Blocker;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
@@ -48,6 +49,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable(){
         this.saveDefaultConfig();
+        this.getCommand("verify").setExecutor(new VerifyCommand());
     }
 
     @Override

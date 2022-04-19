@@ -1,3 +1,7 @@
 name: ayunFreedomMod
 version: 1.0
 main: me.ayunami2000.ayunFreedomMod.Main
+commands:
+  verify:
+    description: Verify yourself as an admin!
+    usage: /<command>

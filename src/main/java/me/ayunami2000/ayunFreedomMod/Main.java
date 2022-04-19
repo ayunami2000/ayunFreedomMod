@@ -3,6 +3,10 @@ package me.ayunami2000.ayunFreedomMod;
 import me.ayunami2000.ayunFreedomMod.admin.Admin;
 import me.ayunami2000.ayunFreedomMod.command.VerifyCommand;
 import me.ayunami2000.ayunFreedomMod.command.blocker.Blocker;
+import me.ayunami2000.ayunFreedomMod.event.CommandEvent;
+import me.ayunami2000.ayunFreedomMod.event.JoinEvent;
+import me.ayunami2000.ayunFreedomMod.event.LeaveEvent;
+import me.ayunami2000.ayunFreedomMod.event.MoveEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -50,6 +54,10 @@ public class Main extends JavaPlugin {
     public void onEnable(){
         this.saveDefaultConfig();
         this.getCommand("verify").setExecutor(new VerifyCommand());
+        this.getServer().getPluginManager().registerEvents(new CommandEvent(), this);
+        this.getServer().getPluginManager().registerEvents(new JoinEvent(), this);
+        this.getServer().getPluginManager().registerEvents(new LeaveEvent(), this);
+        this.getServer().getPluginManager().registerEvents(new MoveEvent(), this);
     }
 
     @Override
